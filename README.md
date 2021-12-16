@@ -6,7 +6,7 @@ So I make this application. It helps me manage file in browser.
 
 ## Usage
 
-Just open this link.
+Just open [this link](https://file-manage-fengya.vercel.app/).
 
 ## Features
 
