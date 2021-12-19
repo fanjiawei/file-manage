@@ -7,12 +7,13 @@ function App() {
     const readDir = async () => {
         setDirectoryHandler(await window.showDirectoryPicker());
     };
-    return (
-        <div className="grid grid-rows-1 grid-flow-col max-h-screen">
-            {directoryHandler ? <FileManager directoryHandler={directoryHandler}/> :
-                <button onClick={readDir}>读取目录</button>}
-        </div>
-    );
+    return directoryHandler ?
+        <div className="grid h-full grid-rows-1" style={{gridTemplateColumns: '320px 1fr'}}>
+            <FileManager directoryHandler={directoryHandler}/>
+        </div> :
+        <div className='flex h-full'>
+            <button className='m-auto' onClick={readDir}>读取目录</button>
+        </div>;
 }
 
 export default App;

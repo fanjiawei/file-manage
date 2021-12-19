@@ -23,10 +23,11 @@ const FileManager: FC<Props> = ({directoryHandler}) => {
         });
     }, [fileExt]);
     return <>
-        <ul className="col-span-1 border-r overflow-auto">
-            <Directories directoryHandler={directoryHandler} onClickFile={onClickFile}/>
+        <ul className="border-r overflow-auto">
+            <Directories directoryHandler={directoryHandler} onClickFile={onClickFile}
+                         hide={true}/>
         </ul>
-        <div className="col-span-4">
+        <div className='overflow-auto'>
             {fileExt ? <Suspense fallback={<div>Loading...</div>}>
                 <FileEditorComponent fileHandler={fileHandler}/>
             </Suspense> : null}
